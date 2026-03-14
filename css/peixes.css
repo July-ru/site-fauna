@@ -1,0 +1,127 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo bege claro */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf8f3;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* Títulos e nomes científicos */
+.animal-header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    background: linear-gradient(to bottom, #f9f4ef, #fdf8f3);
+}
+
+.animal-header h1 {
+    font-size: 3em;
+    color: #8a4b2d;
+    margin-bottom: 10px;
+}
+
+.scientific-name {
+    font-style: italic;
+    color: #555;
+}
+
+/* Imagem principal com efeito */
+.main-image img {
+    width: 60%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.main-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Container de descrição */
+.containerdesc {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.descricao {
+    max-width: 900px;
+    background-color: #fffdf8;
+    padding: 20px;
+    border-left: 5px solid #8a4b2d;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Cards de detalhes */
+.animal-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.animal-details > div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+}
+
+.animal-details > div:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos das seções */
+.animal-details h2 {
+    color: #8a4b2d;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    background-color: #f4ede4;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-image img {
+        width: 90%;
+    }
+
+    .animal-details {
+        padding: 20px;
+    }
+}

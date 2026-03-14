@@ -1,0 +1,217 @@
+    /* css das regiões  */
+    
+    :root {
+      --primary-color: #2E8B57;
+      --primary-dark: #1E6B47;
+      --secondary-color: #FFD700;
+      --accent-color: #4169E1;
+      --light-color: #F5F5F5;
+      --dark-color: #333;
+      --text-color: #444;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Merriweather', serif;
+      background-color: var(--light-color);
+      min-height: 100vh;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-dark);
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .tmf {
+      font-size: 3.5rem;
+      color: #FFA500;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-left: 0.5rem;
+    }
+
+    .tp {
+      font-size: 2.5rem;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    /* 'nav' essa é a parte do "voltar á pagina principal"  */
+
+    nav {
+    text-align: center;
+    margin-top: 10px;
+    }
+    
+    nav a {
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.3s;
+    }
+    
+    nav a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    }
+
+    .frase {
+      font-size: 1.2rem;
+      color: black;
+      font-style: italic;
+      text-align: center;
+      margin: 30px auto;
+      max-width: 900px;
+    }
+
+    /* Esse é o background (da página) de cada respectiva região"  */
+
+.opcao {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 40px;
+}
+
+/* Fundos específicos */
+body.regiao-norte .opcao {
+  background-image: url('../../background/norte.jpg');
+}
+
+body.regiao-nordeste .opcao {
+  background-image: url('../../background/nordeste.jpg');
+}
+
+body.regiao-centro-oeste .opcao {
+  background-image: url('../../background/centro.jpg');
+}
+
+body.regiao-sudeste .opcao {
+  background-image: url('../../background/sudeste.jpg');
+}
+
+body.regiao-sul .opcao {
+  background-image: url('../../background/sul.jpg');
+}
+
+
+
+    .opcao::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .opcao-box {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 3rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      max-width: 740px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      width: 200px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px #1E6B47;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: black;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .opcao-box {
+        padding: 1.5rem;
+      }
+      .card {
+        width: 100%;
+      }
+      .tmf {
+        font-size: 2.5rem;
+      }
+      .tp {
+        font-size: 1.8rem;
+      }
+    }
